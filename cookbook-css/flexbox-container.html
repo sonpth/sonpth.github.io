@@ -1,0 +1,64 @@
+<h1>FlexBox Container</h1>
+
+<h2>Row</h2>
+<style>
+    .row {
+        display: flex;
+    }
+</style>
+<div class="row">
+    <p style="background-color: red">The elements will shink accordingly when we resize the window.</p>
+
+    You don't need to wrap content inside a &lt;div&gt;
+
+    <div style="background-color: yellow;">
+        <h2>2</h2>
+        The default value of <code>flex-direction</code> is <i>row</i> meaning all items appear sequentially in a row. In this case <code>main</code> axis is horizontal and <code>cross</code> axis is vertical.
+    </div>
+</div>
+
+<style>
+    .column {
+        display: flex;
+        flex-direction: column;
+    }
+</style>
+<h2>Column</h2>
+<div class="column">
+    <div style="background-color: lightgreen;">
+        Different to <b>row</b>, <b>column</b> elements will take <code>width = 100%</code>.
+    </div>
+    <div style="background-color: lightskyblue">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. </div>
+</div>
+
+<h2>Wrap</h2>
+<div class="row" style="flex-wrap: wrap; justify-content: flex-end;">
+    <div style="background-color:khaki; width: 700px;">
+        <ul>
+            <li>The elements will stack when we resize the window to too small.</li>
+            <li>Without <code>flex-wrap</code>, the <code>width</code> will be ignored.</li>
+        </ul>
+    </div>
+    <div style="background-color: lightgoldenrodyellow; width: 700px;">
+
+        Note that all the items are justified to <b>flex-end</b> of the <b>main</b> axis which is on the righthanded
+        side by default.
+    </div>
+</div>
+
+<h2>Align</h2>
+<div class="row" style="align-items: flex-end;">
+    <div style="background-color: lightgreen;">
+        Align element with <b>cross</b> axis.
+    </div>
+    <div style="background-color: indianred">
+        <h2>4</h2>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+        laborum.
+    </div>
+</div>

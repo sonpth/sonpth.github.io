@@ -1,0 +1,66 @@
+<h1>FlexBox Items</h1>
+
+<h2>Order</h2>
+<style>
+    .container {
+        display: flex;
+    }
+</style>
+<div class="container">
+    The order of elements here is not based on the lexical order.
+    <div style="background-color: lightcoral; order: 2;">
+        <h1>1</h1>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+    </div>
+    <div style="background-color: lightgray; order: -1; flex-shrink: 1.2;">
+        <h1>2</h1>
+        This element is declared last but it appears first, and it takes less space due to <code>flex-shrink</code>.<br/><br/> ❗ Do not work with <code>flex-wrap</code>
+    </div>
+</div>
+
+<h2>Grow, Shink and Space</h2>
+<style>
+    .box {
+        width: 200px;
+        height: 100px;
+        background-color: lightpink;
+        margin: 5px 10px;
+
+        /* subject to move */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .box:nth-child(1) {
+        order: 15;
+        flex-grow: 2;
+    }
+
+    .container-higher-than-needed {
+        display: flex;
+        flex-wrap: wrap;
+        background-color: lightblue;
+        height: 600px;
+        align-content: center;
+    }
+</style>
+<div class="container-higher-than-needed">
+    <div class="box">1 - is the first child in lexical order, but appears last, and it is also wider due to <code>flex-grow</code>! Also see
+        <code>:nth-child(1)</code></div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box">4</div>
+    <div class="box">5</div>
+
+    All the "boxes" are grouped in the center of the container!
+    <div class="box" style="flex-basis: 40%">6 TODO</div>
+    <div class="box" style="flex-basis: 60%">7 TODO</div>
+    <div class="box">8</div>
+    <div class="box">9</div>
+    <div class="box">10</div>
+
+    <div class="box">11</div>
+    <div class="box">12</div>
+    <div class="box">13</div>
+    <div class="box">14</div>
+    <div class="box">15</div>
+</div>
