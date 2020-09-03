@@ -1,5 +1,7 @@
 <h1>FlexBox Items</h1>
 
+❗NOTE <code>float</code>, <code>clear</code> and <code>vertical-align</code> have no effect on a flex item, and do not take it out-of-flow. 
+
 <h2>Order</h2>
 <style>
     .container {
@@ -24,10 +26,11 @@
         width: 200px;
         height: 100px;
         background-color: lightpink;
-        margin: 5px 10px;
+        margin: 5px;
 
-        /* subject to move */
+        /* not related to the subject here */
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        padding: 5px;
     }
 
     .box:nth-child(1) {
@@ -42,18 +45,25 @@
         height: 600px;
         align-content: center;
     }
+
+    code {
+        background-color: black;
+        padding: 1px 3px;
+        border-radius: 3px;
+        color: yellowgreen;
+    }
 </style>
 <div class="container-higher-than-needed">
-    <div class="box">1 - is the first child in lexical order, but appears last, and it is also wider due to <code>flex-grow</code>! Also see
-        <code>:nth-child(1)</code></div>
+    <div class="box">1 - It appears last due to <code>:nth-child(1)</code>, and wider due to <code>flex-grow</code> which determines how much the flex item will grow relative to the rest of the flex items in the flex container when positive free space is distributed.
+    </div>
     <div class="box">2</div>
     <div class="box">3</div>
     <div class="box">4</div>
     <div class="box">5</div>
 
-    All the "boxes" are grouped in the center of the container!
-    <div class="box" style="flex-basis: 20%">6 TODO</div>
-    <div class="box" style="flex-basis: 30%">7 TODO</div>
+    All the elements are grouped in the center of the container!
+    <div class="box" style="flex-basis: 20%"><code>flex-basis</code>: the default/initial size of an element before the remaining space is distributed</div>
+    <div class="box">7</div>
     <div class="box" style="flex-basis: 80%">8</div>
     <div class="box">9</div>
     <div class="box">10</div>
@@ -62,5 +72,4 @@
     <div class="box">12</div>
     <div class="box">13</div>
     <div class="box">14</div>
-    <div class="box">15</div>
 </div>

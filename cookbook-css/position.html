@@ -1,16 +1,62 @@
+<h1>Position</h1>
 <style>
     body {
         background-color: #1f1f1f;
         color: #bfbfbf;
+        height: 2000px;
+    }
+
+    code {
+        background-color: blue;
+        padding: 1px 3px;
+        border-radius: 3px;
     }
 
     .box {
-        width: 100px;
-        height: 100px;
-        margin: 10px;
+        padding: 10px;
+    }
+    
+    .container {
+        background-color: rgba(0, 0,0, .6);
+        color: goldenrod;
+        border: 1px solid lightblue;
+        padding: 10px;
+        margin: 5px 0;
     }
 </style>
 
-<div class="box" style="background-color: #627da0;"></div>
-<div class="box" style="background-color: #5b8054;"></div>
+<div class="container">
+    The default behavior of a &lt;div&gt; is taking all the available <code>width</code>, and the <code>height</code> to accommodate its content if required.
+    <div class="box" style="background-color: #627da0; position: fixed; bottom: 50px;">
+        <code>position: fixed</code><br/>
+        This element is positioned in the document regardless its parents.
+    </div>
+</div>
 
+<div class="container">
+    <div class="box" style="background-color: #5b8054; position: absolute; top: 120px;">
+        <code>position: absolute</code> removes the element from the webpage flow. It is positioned according to the coordinate system it is in (i.e default or the closest parent with a set positioning).
+        <ul>
+            <li>Its container and the lexically following elements won't be affected by its existence.</li>
+            <li>Like <code>relative</code>, <u>it creates a new coordinate system for its child elements</u>.</li>
+            <li>By specifing all <code>top</code>, <code>left</code>, <code>right</code> and <code>bottom</code>, we actually define the element size depending on its container (scalable)</li>
+        </ul>
+    </div>
+</div>
+
+<!-- ########### Filler ########### -->
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br/>
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+
+<div class="container">
+    💡 See the difference in <code>height</code> between this container and the container for <code>absolute</code> element above.
+    <div class="box" style="background-color: #5b8054; position: relative; top: 30px;">
+        <code>position: relative</code> other elements behave as if the element was in its original position.<br/>You can use <code>top/bottom</code>, and <code>left/right</code> to move the element <u>relative</u> to where it would <b>normally</b> occur in the document.
+    </div>
+</div>
+
+<!-- ########### Filler ########### -->
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <br/><br/>
+
+❗ IMPORTANT: <code>z-index</code> ONLY work on an element whose <code>position</code> property has been explicitly set to <code>absolute</code>, <code>fixed</code>, or <code>relative</code>.

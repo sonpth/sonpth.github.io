@@ -1,7 +1,40 @@
-Playground of CSS
+<h1>Playground of CSS</h1>
 
-<div style="display: flex; flex-direction: column;">
+<div class="menu">
+    <a href="flow_n_stack.html">HTML Document Flow & Stacking Context</a>
     <a href="flexbox-container.html">FlexBox Container</a>
     <a href="flexbox-items.html">FlexBox Items</a>
     <a href="position.html">CSS Position</a>
+    <a href="float.html">CSS Float</a>
+</div>
+
+<style>
+    .menu {
+        display: flex; flex-direction: column;
+        width: 400px;
+        height: 100px;
+        background-color: linen;
+
+        /* center vertically */
+        margin: 0 auto; 
+
+    }
+    .center {
+        width: 400px;
+        height: 100px;
+        background-color: linen;
+        text-align: center;
+      
+        /* center vertically & horizontally */
+        position: absolute;
+        top: 50%;
+        margin-top: -50px; /* Need to be 50% of th element's height */
+        left: 50%;
+        margin-left: -200px; /* Need to be 50% of th element's width */
+
+    }
+</style>
+<div class="center">
+    <h4>Div center</h4>
+    💬 📝💡 ☑ ☒ 😠😖❗❓☠
 </div>

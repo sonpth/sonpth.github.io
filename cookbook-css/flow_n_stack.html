@@ -1,0 +1,105 @@
+<h2>Inline & Block Elements</h2>
+<style>
+    span {
+        margin-top: 1000px;
+        /* This has no effect */
+        margin-left: 10px;
+        /* Inline elements can have this */
+        background-color: sandybrown;
+        padding: 1px 3px;
+        border-radius: 3px;
+    }
+</style>
+<p>
+    <span>Inline</span> <span>elements</span> are shared horizontal space with other elements. They can't have
+    <code>margin-top/bottom</code> (💡 but they can have <code>margin-left/right</code>) or a <code>width/height</code>
+    other than the default values (😖 it depends on you considering <code>img</code> is inline element or not - TODO
+    W3).
+</p>
+<p>
+    <span>Block</span> elements take up the full lines (i.e not sharing lines with other elements by default).
+</p>
+
+<h2>Flow</h2>
+<style>
+    em {
+        display: inline-block;
+        width: 300px;
+        vertical-align: top;
+        background-color: lightskyblue;
+    }
+</style>
+<em>Column 1<br />
+    <code>display: inline-block</code> is basically used to make elements inline (i.e sharing the same line), but
+    preserving their block capabilities such as setting <code>width/height</code>, top/bottom <code>margins</code>.
+</em>
+<em>❗ Note the space between these columns. We can't do anything about it (e.g: even with defining <code>margin</code>
+    property).</em>
+<em>Yet another column.</em>
+<p>This <code>block</code> element still flows to the next line, in contrast to what will happen if we apply
+    <code>float</code> to the "Column*" elements.</p>
+
+TODO <code>display: box;</code>
+
+<h2>Stack</h2>
+<b>Stacking Order</b>: Every element in an HTML document can be either in front of or behind every other element in the document. 
+The <b>Stacking Order</b>:<ol>
+    <li>Background and borders of the element that establish stacking context.</li>
+    <li>Elements with negative stacking contexts/z-index values, in order of appearance.</li>
+    <li>Non-positioned, non-floated, block-level elements, in order of appearance.</li>
+    <li>Non-positioned, floated elements, in order of appearance.</li>
+    <li>Inline elements, in order of appearance.</li>
+    <li>Positioned elements, in order of appearance.</li>
+</ol>
+
+<br/><b>Stacking Contexts</b>: Groups of elements with a common parent that move forward or backward together in the stacking order.
+<br/>
+Every stacking context has a single HTML element as its root element. When a new stacking context is formed on an element, that stacking context confines all of its child elements to a particular place in the stacking order. That means that if an element is contained in a stacking context at the bottom of the stacking order, there is no way to get it to appear in front of another element in a different stacking context that is higher in the stacking order, even with a z-index of a billion!
+<br/>
+There are <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context">few ways</a> to create a new context, for example:<ol>
+    <li>When an element is the root element of a document (the <code>html</code> element).</li>
+    <li>When an element has a position value other than static and a z-index value other than auto.</li>
+    <li>When an element has an opacity value less than 1.</li>
+</ol>
+
+<style>
+    .red,
+    .green,
+    .blue {
+        position: absolute;
+        width: 100px;
+        color: white;
+        line-height: 100px;
+        text-align: center;
+    }
+
+    .red {
+        z-index: 1;
+        top: 20px;
+        left: 20px;
+        background: red;
+    }
+
+    .green {
+        top: 60px;
+        left: 60px;
+        background: green;
+    }
+
+    .blue {
+        top: 100px;
+        left: 100px;
+        background: blue;
+    }
+</style>
+<div style="position: absolute;">
+    <div>
+        <section class="red">Red</section>
+    </div>
+    <div>
+        <section class="green">Green</section>
+    </div>
+    <div>
+        <section class="blue">Blue</section>
+    </div>
+</div>
