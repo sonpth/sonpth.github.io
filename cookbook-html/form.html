@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+    <style>
+        input:required {
+            border-left: 3px solid salmon;
+        }
+
+        input:focus:invalid {
+            background-color: sandybrown;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <!-- -->
+        <input type=search placeholder="search"/>
+
+        <!-- -->
+        <input type="text" list="fruits" placeholder="datalist">
+        <datalist id="fruits">
+            <option value="Apples">
+            <option value="Mangos">
+        </datalist>
+
+        <!-- -->
+        <input type="tel" placeholder="phone" required/>
+
+        <!-- -->
+        <input type="number" placeholder="number"/>
+
+        <!-- -->
+        <input type="color"/>
+
+        <!-- -->
+        <input type="datetime-local" />
+
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
