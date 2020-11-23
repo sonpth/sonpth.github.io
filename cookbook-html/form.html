@@ -6,8 +6,16 @@
             border-left: 3px solid salmon;
         }
 
+        input:optional {
+            border-left: 3px solid teal;
+        }
+
         input:focus:invalid {
             background-color: sandybrown;
+        }
+
+        input:valid + .invalid {
+            visibility: hidden;
         }
     </style>
 </head>
@@ -16,8 +24,8 @@
         <!-- -->
         <input type=search placeholder="search"/>
 
-        <!-- -->
-        <input type="text" list="fruits" placeholder="datalist">
+        <!-- IMPORTANT: [pattern] must be well-formed -->
+        <input type="text" list="fruits" placeholder="datalist" pattern="[a-zA-Z ]{5,}">
         <datalist id="fruits">
             <option value="Apples">
             <option value="Mangos">
@@ -25,6 +33,7 @@
 
         <!-- -->
         <input type="tel" placeholder="phone" required/>
+        <span class="invalid">custom validation message</span>
 
         <!-- -->
         <input type="number" placeholder="number"/>

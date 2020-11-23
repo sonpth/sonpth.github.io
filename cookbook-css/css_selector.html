@@ -1,0 +1,33 @@
+<style>
+    input {
+        margin-top: 5px;
+    }
+
+    input:required {
+        background-color: salmon;
+    }
+
+    input:required:invalid {
+        border:5px solid springgreen;
+    }
+
+    [data-role="myrole"] {
+        background-color: seagreen;
+    }
+
+</style>
+
+<ul>
+    <li><a href="https://www.smashingmagazine.com/2016/05/an-ultimate-guide-to-css-pseudo-classes-and-pseudo-elements">
+        An Ultimate Guide To CSS Pseudo Classes And Pseudo Elements
+        </a>
+    </li>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Glossary/CSS_Selector">
+        MDN Selector (CSS)
+        </a>
+    </li>
+</ul>
+
+<input required pattern="/^[0-9]{4,4}[a-z]{,1}$/" value="chained pseudo selector"><br/>
+
+<input data-role="myrole" value="selected by custome attribute">
